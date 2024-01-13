@@ -13,9 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {'folke/tokyonight.nvim'},
   {'nvim-lualine/lualine.nvim'},
+  {'Mofiqul/dracula.nvim'}
 })
 
 vim.opt.termguicolors = true
 vim.cmd.colorscheme('tokyonight')
-
+vim.cmd('hi normal guibg=NONE') 
 require('lualine').setup()
