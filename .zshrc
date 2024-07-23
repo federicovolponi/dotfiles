@@ -119,3 +119,4 @@ source $ZSH/oh-my-zsh.sh
 alias py="python"
 alias gte="gnome-text-editor"
 alias dof='git --git-dir ${HOME}/.config/dotfiles.git --work-tree ${HOME}'
+alias zeditor="env WAYLAND_DISPLAY='' zeditor"
