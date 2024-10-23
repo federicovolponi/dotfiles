@@ -82,6 +82,7 @@ return {
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
           capabilities = capabilities,
+          on_attach = on_attach,
           settings = {
             Lua = {
               -- make the language server recognize "vim" global
@@ -97,6 +98,12 @@ return {
       end,
       ["pyright"] = function()
         lspconfig["pyright"].setup({
+            capabilities = capabilities, 
+            on_attach = on_attach,
+        })
+      end,
+      ["clangd"] = function()
+        lspconfig["clangd"].setup({
             capabilities = capabilities, 
             on_attach = on_attach,
         })
