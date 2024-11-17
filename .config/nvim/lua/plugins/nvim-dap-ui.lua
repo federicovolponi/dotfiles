@@ -10,6 +10,7 @@ return {
     config = function ()
         local dap = require("dap")
         local dapui = require("dapui")
+        local keymap = vim.keymap
         dapui.setup()
         dap.listeners.after.event_initialized["dapui_config"] = function ()
             dapui.open()
@@ -17,5 +18,6 @@ return {
         dap.listeners.before.event_exited["dapui_config"] = function ()
             dapui.close()
         end
+        keymap.set("n", "<leader>du", dapui.eval, {desc = "See expression under cursor"})
     end
 }

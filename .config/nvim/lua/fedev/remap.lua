@@ -12,6 +12,13 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Remap keys for navigating tabs
+vim.keymap.set("n", "H", ":bp<CR>")
+vim.keymap.set("n", "L", ":bn<CR>")
+
+-- Create terminal tab
+vim.keymap.set("n", "<leader>T", ":tab term<CR>")
+
 -- Vertical split
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
 -- Replace word under cursor
