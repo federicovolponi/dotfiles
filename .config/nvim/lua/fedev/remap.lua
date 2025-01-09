@@ -23,8 +23,16 @@ vim.keymap.set("n", "<leader>T", ":tab term<CR>")
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
 -- Horizontal split
 vim.keymap.set("n", "<leader>h", vim.cmd.split)
+
 -- Replace word under cursor
 vim.keymap.set("n", "<leader>R", ":%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i")
 
 -- Format with black (python)
 vim.keymap.set("n", "<leader>fb", ":w !black %<cr>")
+
+-- Resize splits
+vim.keymap.set("n", "<leader>>", "<C-w>3>")
+vim.keymap.set("n", "<leader><lt>", "<C-w>3<lt>")
+vim.keymap.set("n", "<leader>+", "<C-w>3+")
+vim.keymap.set("n", "<leader>=", "<C-w>3+")
+vim.keymap.set("n", "<leader>-", "<C-w>3-")
