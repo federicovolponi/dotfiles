@@ -66,6 +66,15 @@ return {
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
+    vim.diagnostic.config {
+        signs = true,
+        virtual_text = true,
+        virtual_lines = false,
+        update_in_insert = true,
+        float = {
+          border = 'rounded',
+      }
+  }
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -105,6 +114,10 @@ return {
       end,
       ["clangd"] = function()
         lspconfig["clangd"].setup({
+            cmd = {
+                "clangd",
+                "--header-insertion=never",
+            },
             capabilities = capabilities, 
             on_attach = on_attach,
         })

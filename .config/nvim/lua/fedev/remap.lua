@@ -21,6 +21,8 @@ vim.keymap.set("n", "<leader>T", ":tab term<CR>")
 
 -- Vertical split
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
+-- Horizontal split
+vim.keymap.set("n", "<leader>h", vim.cmd.split)
 -- Replace word under cursor
 vim.keymap.set("n", "<leader>R", ":%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i")
 
