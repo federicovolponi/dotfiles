@@ -1,11 +1,9 @@
 -- Bar showing at the bottom
-local colorscheme = require("fedev.colorschemes.lualine.rosepine")
+local colorscheme = require("core.themes.lualine.rose-pine")
 
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    lazy = false, 
-    priority = 1000,
     config = function ()
         require('lualine').setup {
           options = {
@@ -36,5 +34,5 @@ return {
           tabline = {},
           extensions = {},
         }
-    end 
+    end
 }

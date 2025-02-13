@@ -1,12 +1,22 @@
+-- File Explorer / Tree
 return {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
+  'nvim-tree/nvim-tree.lua',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons', -- Fancy icon support
+  },
+  opts = {
+    actions = {
+      open_file = {
+        window_picker = {
+          enable = false
+        },
+      }
     },
-    config = function()
-        require("nvim-tree").setup {}
-        vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true })
-    end,
+  },
+  config = function (_, opts)
+    -- Recommended settings to disable default netrw file explorer
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+    require("nvim-tree").setup(opts)
+  end
 }
