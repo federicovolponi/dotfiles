@@ -17,13 +17,14 @@ return {
                 'bashls', -- requires npm to be installed
                 'lua_ls',
                 'pyright',
+                -- 'basedpyright',
                 'dockerls',
-                'clangd',
-                'jdtls',
+                -- 'clangd',
+                -- 'jdtls',
                 'jsonls', -- requires npm to be installed
-                'lemminx',
-                'marksman',
-                'quick_lint_js',
+                -- 'lemminx',
+                -- 'marksman',
+                -- 'quick_lint_js',
             }
         })
 
@@ -32,6 +33,8 @@ return {
             ensure_installed = {
                 "codelldb",
                 "java-debug-adapter",
+                "debugpy",
+                "pylint",
             },
         })
         vim.api.nvim_command('MasonToolsInstall')
@@ -66,7 +69,32 @@ return {
             },
         }
         -- Pyright LSP settings
-        lspconfig.pyright.setup {}
+        lspconfig.pyright.setup {
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode = "basic",
+                        autoSearchPaths = true,
+                        useLibraryCodeForTypes = false,
+                        diagnosticMode = 'openFilesOnly',
+                    },
+                },
+            },
+        }
+        -- lspconfig["basedpyright"].setup({
+        --     capabilities = lsp_capabilities,
+        --     settings = {
+        --         pyright = {
+        --             -- Using Ruff's import organizer
+        --             disableOrganizeImports = true
+        --         },
+        --         basedpyright = {
+        --             analysis = {
+        --                 typeCheckingMode = "basic"
+        --             }
+        --         }
+        --     }
+        -- })
 
         -- Clangd LSP setttings
         lspconfig.clangd.setup {

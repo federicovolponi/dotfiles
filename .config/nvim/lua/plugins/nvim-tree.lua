@@ -12,6 +12,9 @@ return {
         },
       }
     },
+    filters = {
+        dotfiles = false,
+    }
   },
   config = function (_, opts)
     -- Recommended settings to disable default netrw file explorer

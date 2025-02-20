@@ -1,4 +1,3 @@
-maxfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -117,6 +116,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 alias py="python"
-alias dof='git --git-dir ${HOME}/.config/dotfiles.git --work-tree ${HOME}'
+alias dof='git --git-dir ${HOME}/.dotfiles --work-tree ${HOME}'
 alias zeditor="env WAYLAND_DISPLAY='' zeditor"
 export PATH=$HOME/go/bin:$PATH
