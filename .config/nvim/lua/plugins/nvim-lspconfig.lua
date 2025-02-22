@@ -10,21 +10,25 @@ return {
         { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     },
     config = function()
-        require('mason').setup()
+        require('mason').setup(
+            {
+                ensure_installed = {
+                    "typescript-language-server",
+                }
+            }
+        )
         require('mason-lspconfig').setup({
             -- Install these LSPs automatically
             ensure_installed = {
                 'bashls', -- requires npm to be installed
                 'lua_ls',
                 'pyright',
-                -- 'basedpyright',
                 'dockerls',
                 -- 'clangd',
                 -- 'jdtls',
                 'jsonls', -- requires npm to be installed
                 -- 'lemminx',
                 -- 'marksman',
-                -- 'quick_lint_js',
             }
         })
 
@@ -35,6 +39,8 @@ return {
                 "java-debug-adapter",
                 "debugpy",
                 "pylint",
+                "eslint-lsp",
+                "js-debug-adapter"
             },
         })
         vim.api.nvim_command('MasonToolsInstall')

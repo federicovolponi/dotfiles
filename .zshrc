@@ -119,3 +119,4 @@ alias py="python"
 alias dof='git --git-dir ${HOME}/.dotfiles --work-tree ${HOME}'
 alias zeditor="env WAYLAND_DISPLAY='' zeditor"
 export PATH=$HOME/go/bin:$PATH
+export PATH="$PATH:/opt/nvim/"
