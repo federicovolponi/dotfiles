@@ -38,7 +38,7 @@ return {
                 "codelldb",
                 "java-debug-adapter",
                 "debugpy",
-                "pylint",
+                -- "pylint",
                 "eslint-lsp",
                 "js-debug-adapter"
             },
